@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sagar_sandwich/screen/enter_code.dart';
+import 'package:sagar_sandwich/screen/forgot.dart';
+import 'package:sagar_sandwich/screen/reset_password.dart';
 import 'package:sagar_sandwich/screen/signup.dart';
 import 'package:sagar_sandwich/screen/splash.dart';
 import 'package:sagar_sandwich/screen/signin.dart';
@@ -17,10 +20,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home:  SplashScreen(),
+      home:  ForgotScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'src/my_app.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -68,7 +69,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 400,
+                    height: 300,
                     //color: Colors.yellow,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
@@ -83,7 +84,7 @@ class _SignUpState extends State<SignUp> {
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             validator: (email) {
-                              if (email!.isEmpty || !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(email!)) {
+                              if (email!.isEmpty || !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}').hasMatch(email)) {
                                 return 'Please enter email';
                               }
                             },
@@ -121,7 +122,7 @@ class _SignUpState extends State<SignUp> {
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             validator: (number) {
-                              if (number!.isEmpty || !RegExp (r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$').hasMatch(number!) ) {
+                              if (number!.isEmpty || !RegExp (r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$').hasMatch(number) ) {
                                 return 'Please enter correct number ';
                               }
                               return null;
@@ -140,7 +141,7 @@ class _SignUpState extends State<SignUp> {
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10))),
                             validator: (name) {
-                              if (name!.isEmpty ||!RegExp(r'^[a-z A-Z]+$').hasMatch(name!) ) {
+                              if (name!.isEmpty ||!RegExp(r'^[a-z A-Z]+$').hasMatch(name) ) {
                                 return 'Please enter name';
                               }
                               return null;
@@ -154,12 +155,15 @@ class _SignUpState extends State<SignUp> {
                     padding: const EdgeInsets.all(15.0),
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.red,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(32.0),
+                            ),
+                            primary: Color(0xffBF0705),
                             minimumSize: const Size.fromHeight(50)),
                         onPressed: validate,
                         child: Text(
                           'Sign up',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         )),
                   ),
 

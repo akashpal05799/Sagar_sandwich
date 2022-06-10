@@ -1,24 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+
+class EnterCode extends StatefulWidget {
+  const EnterCode({Key? key}) : super(key: key);
 
   @override
-  State<SignIn> createState() => _SignUpState();
+  State<EnterCode> createState() => _EnterCodeState();
 }
 
-class _SignUpState extends State<SignIn> {
-
-  //form ko vaklidate or submit karne ke liye use hoti hai
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  void validate(){
-    if(_formKey.currentState!.validate()){
-      print('okk');
-    }else{
-      print('Error');
-    }
-  }
+class _EnterCodeState extends State<EnterCode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +31,7 @@ class _SignUpState extends State<SignIn> {
               ],
             ),
             Form(
-              key: _formKey,
+              //key: _formKey,
               child: Column(
                 children: [
                   Container(
@@ -54,12 +44,12 @@ class _SignUpState extends State<SignIn> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            'Login',
+                            'Enter Your Code',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w500),
                           ),
                           Text(
-                            'Enter your email and password',
+                            'Enter your code we just sent',
                             style: TextStyle(fontSize: 15),
                           ),
                         ],
@@ -74,41 +64,7 @@ class _SignUpState extends State<SignIn> {
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         children: [
-                          TextFormField(
-                            decoration: InputDecoration(
-                                prefixIcon: Icon(Icons.mail),
-                                //fillColor: Color(0xffE6E6E6),
-                                filled: true,
-                                hintText: 'EMAIL ADDRESS',
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10))),
-                            validator: (email) {
-                              if (email == null || email.isEmpty) {
-                                return 'Please enter email';
-                              }
-                            },
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextFormField(
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                prefixIcon: Icon(Icons.lock),
-                                //fillColor: Color(0xffE6E6E6),
-                                filled: true,
-                                hintText: 'PASSWORD',
-                                suffixIcon: Icon(Icons.remove_red_eye),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10))),
-                   //this is function
-                              validator: (passwod) {
-                              if (passwod == null || passwod.isEmpty) {
-                                return 'Please enter password ';
-                              }
-                              return null;
-                            },
-                          ),
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -118,8 +74,8 @@ class _SignUpState extends State<SignIn> {
                                   ),
                                   onPressed: () {},
                                   child: Text(
-                                    'Forgot Password?',
-                                    style: TextStyle(color: Colors.black),
+                                    'Resand Code',
+                                    style: TextStyle(color: Colors.red),
                                   ))
                             ],
                           ),
@@ -136,9 +92,9 @@ class _SignUpState extends State<SignIn> {
                             ),
                             primary: Colors.red,
                             minimumSize: const Size.fromHeight(50)),
-                        onPressed: validate,
+                        onPressed: (){},
                         child: Text(
-                          'Log in',
+                          'Next',
                           style: TextStyle(fontSize: 18),
                         )),
                   ),
