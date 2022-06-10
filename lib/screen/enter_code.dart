@@ -36,7 +36,7 @@ class _EnterCodeState extends State<EnterCode> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 75,
+                    height: 90,
                     //color:Colors.red,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
@@ -48,6 +48,7 @@ class _EnterCodeState extends State<EnterCode> {
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w500),
                           ),
+                          SizedBox(height: 5,),
                           Text(
                             'Enter your code we just sent',
                             style: TextStyle(fontSize: 15),
@@ -58,24 +59,85 @@ class _EnterCodeState extends State<EnterCode> {
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 250,
+                    height: 180,
                     //color: Colors.yellow,
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Column(
                         children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            height: 100,
+                            //color: Colors.red,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  //color: Colors.yellow,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Color(0xffD2D2D2),
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  //color: Colors.yellow,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xffD2D2D2),
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  //color: Colors.yellow,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xffD2D2D2),
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  //color: Colors.yellow,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xffD2D2D2),
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
 
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                  style: TextButton.styleFrom(
+                                    style: TextButton.styleFrom(
                                     textStyle: const TextStyle(fontSize: 15),
                                   ),
                                   onPressed: () {},
                                   child: Text(
                                     'Resand Code',
-                                    style: TextStyle(color: Colors.red),
+                                    style: TextStyle(color: Color(0xffBF0705),fontWeight: FontWeight.bold),
                                   ))
                             ],
                           ),
@@ -90,7 +152,7 @@ class _EnterCodeState extends State<EnterCode> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(32.0),
                             ),
-                            primary: Colors.red,
+                            primary: Color(0xffBF0705),
                             minimumSize: const Size.fromHeight(50)),
                         onPressed: (){},
                         child: Text(
@@ -98,25 +160,6 @@ class _EnterCodeState extends State<EnterCode> {
                           style: TextStyle(fontSize: 18),
                         )),
                   ),
-
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text( "Don't have an account?",),
-                          SizedBox(width: 10,),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Sign up',
-                                style: TextStyle(color: Colors.red, fontSize: 20),
-                              ))
-                        ],
-                      )
-                    ],
-                  )
-
                 ],
               ),
             ),
